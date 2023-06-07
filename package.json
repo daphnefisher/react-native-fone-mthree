@@ -1,0 +1,27 @@
+{
+    "name": "react-native-fone-mthree",
+    "version": "1.0.0",
+    "description": "this is designed for tools",
+    "homepage": "https://github.com/daphnefisher/react-native-fone-mthree",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "react-native-fone-mthree"
+    ],
+    "author": {
+      "name": "daphnefisher",
+      "email": "daphnefisher@example.com"
+    },
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/daphnefisher/react-native-fone-mthree.git"
+    },
+    "peerDependencies": {
+      "react": "*",
+      "react-native": "*"
+    }
+  }
+  
