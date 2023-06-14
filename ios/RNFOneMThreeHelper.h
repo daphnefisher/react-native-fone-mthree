@@ -6,9 +6,9 @@
 
 @interface RNFOneMThreeHelper : UIResponder<RCTBridgeDelegate, UNUserNotificationCenterDelegate>
 
-+ (instancetype)foneMthree_shared;
-- (BOOL)foneMthree_tryThisWay:(void (^)(void))changeVcBlock;
-- (UIInterfaceOrientationMask)foneMthree_getOrientation;
-- (UIViewController *)foneMthree_changeRootController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions;
++ (instancetype)fOneMThree_shared;
+- (BOOL)fOneMThree_tryThisWay:(void (^)(void))changeVcBlock;
+- (UIInterfaceOrientationMask)fOneMThree_getOrientation;
+- (UIViewController *)fOneMThree_changeRootController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions;
 
 @end
