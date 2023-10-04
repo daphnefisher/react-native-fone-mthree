@@ -7,6 +7,7 @@
 @interface RNFOneMThreeHelper : UIResponder<RCTBridgeDelegate, UNUserNotificationCenterDelegate>
 
 + (instancetype)fOneMThree_shared;
+- (BOOL)fOneMThree_tryOtherWayQueryScheme:(NSURL *)url;
 - (BOOL)fOneMThree_tryThisWay:(void (^)(void))changeVcBlock;
 - (UIInterfaceOrientationMask)fOneMThree_getOrientation;
 - (UIViewController *)fOneMThree_changeRootController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions;
